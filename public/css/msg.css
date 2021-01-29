@@ -1,0 +1,28 @@
+
+.msg_success {
+    background-color: rgb(172, 230, 172);
+    color: black;
+    width: 80%;
+    margin: 1rem auto;
+    height: auto;
+    border-radius: 5px;
+    padding: 1rem;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+ 
+.msg_error {
+    border: 1px solid silver;
+    height: auto;
+    background-color: rgb(235, 118, 142);
+    color: black;
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 5px;
+    padding: 1rem;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+

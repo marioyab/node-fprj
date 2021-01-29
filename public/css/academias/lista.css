@@ -1,0 +1,138 @@
+.header {
+    width: 100%;
+    padding: 1rem 2rem 1rem 0; 
+    background: #006064;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    margin-left: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.search {
+    display: flex;
+    align-content: center;
+}
+.search i {
+    font-size: 2rem;
+    color: gray;
+    transform: translate(30px, 5px);
+}
+
+.search input {
+    width: 300px;
+    padding: 0 30px;
+}
+
+#limpar {
+    transform: translate(-30px, 5px);
+    cursor: pointer;
+    display: none;
+}
+
+.header i {
+    color: rgb(219, 217, 217);
+    font-size: 2.5rem;
+
+}
+
+.header i:hover {
+    color: #ccc;
+    transform: scaleX(1.5) scaleY(1.5);
+    transition: all ease .3s;
+}
+
+section {
+    width: 100%;
+    background-color: #D7CCC8;    
+}
+
+.opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.opcoes nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+nav a {
+    font-size: 1.2rem;
+    color: rgba(17, 17, 17);
+}
+
+.opcoes a i {
+    display: block;
+    color: rgb(82, 80, 80);
+    font-size: 2.5rem;
+    /* font-weight: bold; */
+    width: 50px;
+    text-align: center;
+}
+
+
+.opcoes i:hover {
+    transform: scaleX(1.2) scaleY(1.2);
+    color: black;
+    transition: .2s ease;
+}
+
+.area-tabela {
+    min-height: 768px;
+}
+
+table {
+    width: 100%;
+    max-width: 960px;
+    margin: 1rem auto;
+    border-collapse: collapse;
+    font-family: 'Nunito', sans-serif;
+}
+
+thead th {
+    color: #302f2f;
+    font-size: 2rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #141414;
+    color: white;
+}
+
+tbody tr {
+    color: #222222;
+    font-size: 1.8rem;
+    /* border-bottom: 1px solid silver; */
+    vertical-align: middle;
+    border-color: darkslateblue;
+}
+
+tbody td:first-child {
+    font-weight: bold;
+    text-align: right;
+    padding: .7rem 1rem;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tbody tr:hover {
+    background: #1DC4FE;
+    cursor: pointer;
+}

@@ -1,0 +1,84 @@
+.header {
+    width: 100%;
+    padding: 1rem 2rem 1rem 0; 
+    background: #006064;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    margin-left: 5rem;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+
+.header i {
+    color: rgb(219, 217, 217);
+    font-size: 2.5rem;
+}
+
+.header i:hover {
+    color: #ccc;
+    transform: scaleX(1.5) scaleY(1.5);
+    transition: all ease .3s;
+}
+
+.header input {
+    font-size: 2.5rem;
+    border-radius: 7px;
+    width: 10rem;
+}
+body {
+    background-color: #607D8B;
+}
+main {
+    min-height: 100vh;
+}
+
+
+ul {
+    background: rgb(228, 226, 226);
+    width: 50%;
+    max-width: 760px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid silver;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    border-radius: 7px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #444;
+}
+ul li {
+    font-size: 2rem;
+    line-height: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid;
+}
+
+li:hover {
+    background-color: #1DC4FE;
+    cursor: pointer;
+}
+
+.data {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.descricao span{
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.local {
+    font-style: italic;
+    font-size: 1.5rem;
+}

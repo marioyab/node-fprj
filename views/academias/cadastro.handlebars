@@ -1,0 +1,119 @@
+<header>
+    <div class="cabecalho">
+        <h2>Novo cadastro</h2>
+        <nav>
+           
+            <a href="/academias" id="rota_volta">Voltar</i></a>
+        </nav>
+    </div>
+</header>
+<form id="formacademia" name="formacadastro" action="/academias/inserir" method="POST">
+    <fieldset>
+        <div>
+            <label for="codigo">Código</label>
+            <input name="codigo" id="codigo" type="text" disabled>
+        </div>
+        <div>
+            <label for="razao">Razão Social</label>
+            <input type="text" name="razao" id="razao"  required>
+        </div>
+        <div>
+            <label for="fantasia">Apelido/Fantasia</label>
+            <input type="text" name="fantasia" id="fantasia" required>
+        </div>
+        <div>
+            <label for="dtcadastro">Data Cadastro:</label>
+            <input type="date" name="dtcadastro" id="dtcadastro">
+        </div>
+        <div>
+            <label for="cnpj">CNPJ</label>
+            <input type="text" name="cnpj" id="cnpj" placeholder="00.000.000/0000-00"
+                onkeyup="mascara('##.###.###/####-##',this,event,true)">
+        </div>
+
+        <div>
+            <label for="inscricao">Inscrição Estadual:</label>
+            <input type="text" name="inscricao" id="inscricao">
+        </div>
+        <div>
+            <label for="id_delegacia">Delegacia</label>
+            <select name="id_delegacia" id="id_delegacia">
+                <option value="">Selecione...</option>
+                {{#each delegacias}}
+                <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div>
+            <label for="tipofiliacao">Tipo</label>
+            <select name="tipofiliacao" id="tipofiliacao" >
+                <option value="">Selecione...</option>
+                <option value="0">Inativa</option>
+                <option value="1">Isenta</option>
+                <option value="2">Regional</option>
+                <option value="3">Vinculada</option>
+                <option value="4">Filiada</option>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" 
+                onkeyup="mascara('##.###-###',this,event,true)">
+        </div>
+        <div>
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" id="endereco" >
+        </div>
+        <div>
+            <label for="numero">Nro:</label>
+            <input type="text" name="numero" id="numero">
+        </div>
+        <div>
+            <label for="complemento">Complemento:</label>
+            <input type="text" name="complemento" id="complemento" >
+        </div>
+        <div>
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" id="bairro" >
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade">
+            </div>
+            <div>
+                <label for="estado">UF:</label>
+                <input type="text" name="estado" id="estado" placeholder="PR" disabled>
+            </div>
+            <div>
+                <label for="contato">Contato:</label>
+                <input type="text" name="contato" id="contato">
+            </div>
+            <div>
+                <label for="fone">Fones:</label>
+                <input type="text" name="fone" id="fone">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+    </fieldset>
+    <fieldset>
+        <div>
+            <label for="correspondendica">Correspondências p/:</label>
+            <input type="text" name="correspondencia" id="correspondencia">
+        </div>
+        <div>
+            <label for="pritecnico">Professor responsável:</label>
+            <input type="text" name="pritecnico" id="pritecnico">
+        </div>
+        <div>
+            <label for="segtecnico">Técnico responsável:</label>
+            <input type="text" name="segtecnico" id="segtecnico">
+        </div>
+    </fieldset>
+    <div class="rodape">
+        <input type="submit" value="Salvar" id="btnSalvar">
+    </div>
+</form>
+

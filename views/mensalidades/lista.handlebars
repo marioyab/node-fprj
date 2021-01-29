@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="/css/mensalidades/lista.css">
+<div class="lista-mensalidades">
+    <div class="cab-mensal">
+        <h2>Mensalidades</h2>
+        <label for="ano">ANO:</label>
+        <input type="number" id="ano_ref">
+    </div>
+    <table id="tabela">
+        <tr>
+            <th>Academia</th>
+            <th>JAN</th>
+            <th>FEV</th>
+            <th>MAR</th>
+            <th>ABR</th>
+            <th>MAI</th>
+            <th>JUN</th>
+            <th>JUL</th>
+            <th>AGO</th>
+            <th>SET</th>
+            <th>OUT</th>
+            <th>NOV</th>
+            <th>DEZ</th>
+        </tr>
+        <tbody>
+            {{#each mensalidades}}
+            <tr>
+                <td class="razao">{{academia.razao}}</td>
+                <td onclick="Alterar({{id_academia}},1);">{{valor01}}</td>
+                <td onclick="Alterar({{id_academia}},2);">{{valor02}}</td>
+                <td onclick="Alterar({{id_academia}},3);">{{valor03}}</td>
+                <td onclick="Alterar({{id_academia}},4);">{{valor04}}</td>
+                <td onclick="Alterar({{id_academia}},5);">{{valor05}}</td>
+                <td onclick="Alterar({{id_academia}},6);">{{valor06}}</td>
+                <td onclick="Alterar({{id_academia}},7);">{{valor07}}</td>
+                <td onclick="Alterar({{id_academia}},8);">{{valor08}}</td>
+                <td onclick="Alterar({{id_academia}},9);">{{valor09}}</td>
+                <td onclick="Alterar({{id_academia}},10);">{{valor10}}</td>
+                <td onclick="Alterar({{id_academia}},11);">{{valor11}}</td>
+                <td onclick="Alterar({{id_academia}},12);">{{valor12}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+
+<div id="modalMes" class="modal">
+    <div class="modal_conteudo">
+        <span class="close">&times;</span>
+        <div class="cab_modal">
+
+        </div>
+        <form action="/mensalidades/salvar" method="POST" id="form_mensal">
+            <input type="hidden" name="id_academia" id="id_academia">
+            <input type="hidden" name="ano" id="ano">
+            <input type="hidden" name="mes" id="mes">
+            <div>
+                <label for="pago">Pago</label>
+                <input type="checkbox" name="pago" id="pago">
+            </div>
+            <div>
+                <label for="valor">Recibo:</label>
+                <input type="text" name="valor" id="valor">
+            </div>
+            <input type="submit" id="btnSalvar" value="Salvar">
+        </form>
+    </div>
+
+</div>
+<script src="/js/academias/mensalidades.js"></script>
+<script>
+  const mensalidades = new Mensalidades('ano_ref')
+
+    function Alterar(id_academia, mes) {
+        modal.style.display = "block";
+        const resp = mensalidades.recuperaMes(id_academia, mes)
+        console.log(resp)
+        
+        document.querySelector('.cab_modal').innerHTML = `
+            <h4 class="academia_modal">NOME DA ACADEMIA</h4>
+            <h3 class="mes_modal">${mes}/${2020}</h3>
+        `
+       
+        document.getElementById('pago').checked = resp.pago
+        document.getElementById('valor').value = resp.valor
+    }
+
+
+    var modal = document.getElementById("modalMes");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    } 
+</script>

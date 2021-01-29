@@ -1,0 +1,21 @@
+<header class="header">
+    <div>
+        <h2>Atas</h2>
+        <input type="text" id="ano" placeholder="Ano:">
+    </div>
+    <a href="/"><i class="fas fa-home"></i></a>
+</header>
+<main>
+    <div class="resultado">
+        <ul>
+            {{#each eventos}}
+            <li>
+            <a href="exames/ata/{{codevento}}">  
+            <p class="data">{{dataevento}}</p>
+            <p class="descricao"> <span>{{descricao}}</span></p>
+            <p class="local">{{local}}</p></a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</main>

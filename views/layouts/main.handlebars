@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPRJ</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/msg.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    {{#each css}}
+    <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+</head>
+
+<body>
+    {{>_msg}}
+    {{{body}}}
+    <footer>Copyright &copy; 2020 - by Mário Yabiku</footer>
+    {{#each js}}
+    <script type="{{this.type}}" src="/js/{{this.name}}"></script>
+    {{/each}}
+</body>
+
+</html>

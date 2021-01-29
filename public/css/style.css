@@ -1,0 +1,8 @@
+body {
+    position: absolute;
+
+    background: url("/img/fundo.jpg") center no-repeat fixed;
+    background-size: 100%;
+    background-origin: content-box;
+    background-position-x: 200px;
+}

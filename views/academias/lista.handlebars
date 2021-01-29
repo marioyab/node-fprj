@@ -1,0 +1,57 @@
+<header class="header">
+    <h2>Academias</h2>
+    <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="txtBusca" name="txtBusca" placeholder="Código/Razão Social..." />
+        <i class="fa fa-times" id="limpar"></i>
+    </div>
+    <a href="/"><i class="fas fa-home"></i></a>
+</header>
+<section>
+    <div class="opcoes">
+        <select id="filtro_tipofiliacao">
+            <option value="5">ATIVAS</option>
+            <option value="0">INATIVAS</option>
+            <option value="1">ISENTAS</option>
+            <option value="2">REGIONAIS</option>
+            <option value="3">VINCULADAS</option>
+            <option value="4">FILIADAS</option>
+        </select>
+
+        <nav>
+            <ul>
+                <li><a href="/academias/cadastro/nova"><i class="fas fa-plus"></i>Cadastrar</a></li>
+                <li><a href="#"><i class="fas fa-money-bill-wave"></i>Mensalidades</a></li>
+                <li><a href="#"><i class="fas fa-print"></i>Imprimir</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</section>
+<div class="area-tabela">
+    <table id="tabela" class="sortable">
+        <thead>
+            <tr class="cabecalho">
+                <th>Cód.</th>
+                <th>Academia</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each academias}}
+            <tr class="item">
+                <td>{{codigo}}</td>
+                <td class="tdRazao">{{razao}}</td>
+                <td hidden>{{tipofiliacao}}</td>
+                <td class="acoes"><a href="/academias/editar/{{codigo}}"><i class="fa fa-edit"></i></a>
+                    <i class="fas fa-trash" id="btnInativar" onclick="desativar({{codigo}}); return false;"></i>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- <div id="paginacao"></div>  -->

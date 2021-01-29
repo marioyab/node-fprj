@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="/css/atletas/editar.css">
+<h2>Cadastro de Atleta</h2>
+
+<div action="atletas /salvar" method="post">
+    <div class="grupo">
+        <div class="row">
+            <div class="col">
+                <img class="foto" src="/Fotos/{{atleta.foto}}" alt="Sem-foto">
+            </div>
+            <div class="col col-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="codigo">Código</label>
+                        <input type="text" id="codigo" name="codigo" disabled value="{{atleta.codigo}}">
+                    </div>
+                    <div class="col">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" value="{{atleta.nome}}">
+                    </div>
+                    <div class="col">
+                        <label for="sexo">Sexo:</label>
+                        <select name="sexo" id="sexo">
+                            <option value="MASCULINO">MASCULINO</option>
+                            <option value="FEMININO">FEMININO</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="dtcadastro">Data Cadastro:</label>
+                        <input type="date" name="dtcadastro" id="dtcadastro" value="{{atleta.dtcadastro}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="rg">RG:</label>
+                        <input type="text" name="rg" id="rg" value="{{atleta.rg}}">
+                    </div>
+                    <div class="col">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" value="{{atleta.cpf}}">
+                    </div>
+                    <div class="col">
+                        <label for="certidaonasc">Certidão Nasc.:</label>
+                        <input type="text" name="certidaonasc" id="certidaonasc" value="{{atleta.certidaonasc}}">
+                    </div>
+                    <div class="col">
+                        <label for="datanasc">Data Nasc:</label>
+                        <input type="date" name="datanasc" id="datanasc" value="{{atleta.datanasc}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="nacionalidade">Nacionalidade:</label>
+                        <input type="text" id="nacionalidade" name="nacionalidade" value="{{atleta.nacionalidade}}">
+                    </div>
+                    <div class="col">
+                        <label for="naturalidade">Natural de:</label>
+                        <input type="text" id="naturalidade" name="naturalidade" value="{{atleta.naturalidade}}">
+                    </div>
+                    <div class="col">
+                        <label for="ufnaturalidade">UF:</label>
+                        <input type="text" id="ufnaturalidade" name="ufnaturalidade" value="{{atleta.ufnaturalidade}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grupo">
+        <div class="row">
+
+            <div class="col">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" value="{{atleta.endereco}}">
+            </div>
+            <div class="col">
+                <label for="numero">Nro:</label>
+                <input type="text" id="numero" name="numero" value="{{atleta.numero}}">
+            </div>
+            <div class="col">
+                <label for="complemento">Complemento:</label>
+                <input type="text" id="complemento" name="complemento" value="{{atleta.complemento}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" value="{{atleta.bairro}}">
+            </div>
+            <div class="col">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" value="{{atleta.cep}}">
+                <input type="button" id="btnCep" value="Buscar...">
+            </div>
+            <div class="col">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" value="{{atleta.cidade}}">
+            </div>
+            <div class="col">
+                <label for="uf">UF:</label>
+                <input type="text" id="uf" name="uf" value="{{atleta.uf}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="fone">Fone:</label>
+                <input type="text" id="fone" name="fone" value="{{atleta.fone}}">
+            </div>
+            <div class="col">
+                <label for="Celular">Celular:</label>
+                <input type="text" id="celular" name="celular" value="{{atleta.celular}}">
+            </div>
+            <div class="col">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" value="{{atleta.email}}">
+            </div>
+        </div>
+    </div>
+    <div class="grupo">
+        <div class="row">
+            <div class="col">
+                <label for="estadocivil">Estado Civil:</label>
+                <select name="estadocivil" id="estadocivil">
+                    <option value="SOLTEIRO(A)">SOLTEIRO(A)</option>
+                    <option value="CASADO(A)">CASADO(A)</option>
+                    <option value="DIVORCIADO(A)">DIVORCIADO(A)</option>
+                    <option value="VIUVO(A)">VIUVO(A)</option>
+                    <option value="OUTRO">OUTRO</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="conjuge">Conjuge:</label>
+                <input type="text" id="conjuge" name="conjuge" value="{{atleta.conjuge}}">
+            </div>
+            <div class="col">
+                <label for="nomemae">Nome da Mãe:</label>
+                <input type="text" id="nomemae" name="nomemae" value="{{atleta.nomemae}}">
+            </div>
+            <div class="col">
+                <label for="nomepai">Nome do Pai:</label>
+                <input type="text" id="nomepai" name="nome" value="{{atleta.nomepai}}">
+            </div>
+        </div>
+    </div>
+    <div class="grupo">
+        <div class="row">
+            <div class="col">
+                <label for="tiporegistro">Tipo registro:</label>
+                <select name="tiporegistro" id="tiporegistro">
+                    <option value="0">Inativo</option>
+                    <option value="1">Isento</option>
+                    <option value="2">Regional</option>
+                    <option value="3">Vinculado</option>
+                    <option value="4">Filiado</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="id_academia">Código:</label>
+                <input type="text" id="id_academia" name="id_academia" value="{{atleta.id_academia}}">
+            </div>
+            <div class="col">
+                <label>Academia:</label>
+                <input type="text" id="razao" value="{{atleta.academia.razao}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>

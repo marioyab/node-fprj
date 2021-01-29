@@ -1,0 +1,101 @@
+header {
+    width: 100%;
+    background: #006064;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 2rem; 
+}
+
+.evento {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header i {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+header  a {
+    font-size: 2rem;
+    color: white;
+    /* transform: translate(-10px, 5px);*/
+}
+
+
+.conteudo-add {
+    width: 90%;
+    padding: 2rem;
+    margin: 2rem auto;
+    height: auto;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0,0,0,.3);
+}
+
+.cab-add {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+form label {
+    display: inline-table;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100px;
+}
+
+form input, form select {
+    font-size: 2rem;
+}
+.atividades {
+    margin-bottom: 1rem;
+}
+
+.add-atletas {
+    margin-bottom: 1rem;
+}
+
+.pontos {
+    margin-bottom: 1rem;
+}
+form #codcand {
+    width: 100px;
+}
+form #nome {
+    width: 400px;
+}
+
+form #pto {
+    width: 100px;
+}
+
+form #percentual {
+    width: 50px;
+}
+
+#btnSalvar {
+    margin-top: 1rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: #1DC4FE;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    
+}
+
+.erros {
+    width: 100%;
+    padding: 1rem;
+    background-color: red;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,32 @@
+<style>
+table {
+    border-collapse: collapse;
+    width: 50%;
+    height: auto;
+    padding: 2rem;
+}    
+
+tr {
+    font-size: 1rem;
+    line-height: 2;
+    border-bottom: 1px solid silver;
+}
+
+tr:hover {
+    background-color: #1DC4FE;
+}
+</style>
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <td>Editar</td>
+    </tr>
+    {{#each atletas}}
+    <tr>
+        <td>{{codigo}}</td>
+        <td>{{nome}}</td>
+        <td><a href="/atletas/editar/{{codigo}}"><i class="fas fa-edit"></i> </a></td>
+    </tr>
+    {{/each}}
+</table>

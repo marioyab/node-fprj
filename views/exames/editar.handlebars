@@ -1,0 +1,57 @@
+{{#each erros}}
+    <div class="erros">{{texto}}</div>
+{{/each}}
+<header>
+
+    <a href="/exames/ata/{{ata.codevento}}"><i class="fas fa-arrow-left fa-lg"></i></a>
+    <div class="evento">
+        <h3>{{ata.tabevento.descricao}}</h3>
+        <h4 style="text-align: center;">{{ata.tabevento.local}} - {{#formatDate ata.tabevento.dataevento}}{{/formatDate}}</h4>     
+
+    </div>
+</header>
+
+                
+<div class="conteudo-add">
+
+    <form action="/exames/ata/inserirAtleta" method="POST" id="formulario" >
+    
+        <input name="codevento" id="codevento" value="{{ata.codevento}}" hidden>
+        
+        <div class="add-atletas">
+            <label for="codigo">Atleta:</label>
+            <input type="text" name="codcand" id="codcand" value="{{ata.codcand}}" disabled>
+            <input type="text" name="nome" id="nome" value="{{ata.atleta.nome}}" disabled>
+            <input type="text" name="id_faixa" id="id_faixa" value="{{ata.id_faixa}}" hidden>
+        </div>
+        <div class="atividades">
+            <label for="tipoativ">Atividade:</label>
+            <select name="tipoativ" id="tipoativ" value="{{tipoativ}}" required>
+    
+                {{#each ata.tipos}}
+                   <option value="{{@index}}">{{this}}</option>           
+                {{/each}}
+            </select>
+            <select name="codativ" id="codativ" value="{{codativ}}" required>
+                <option value="{{codativ}}">{{descricao}}</option>
+                {{#each ata.atividades}}
+                    <option value="{{codativ}}">{{descricao}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <div class="pontos">
+            <label for="pto">Pontos:</label>
+            <input type="text" name="pto" id="pto" value="{{ata.pto}}" required>
+            <input type="text" name="percentual" id="percentual" value="{{ata.percentual}}">
+            <label for="percentual">%</label>
+        </div>
+        <div class="obs">
+            <label for="obs" style="vertical-align: top;">Observação:</label>
+            <textarea name="obs" id="obs" value="{{ata.obs}}" rows="5" cols="45"></textarea>
+        </div>
+        <input type="submit" id="btnSalvar" value="Salvar">
+
+    </form>
+</div>
+

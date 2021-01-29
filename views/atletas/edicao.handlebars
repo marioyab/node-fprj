@@ -1,0 +1,131 @@
+<header>
+    <div class="cabecalho">
+        <h2>Cadastro de Atleta</h2>
+        <nav>
+            <a href="/atletas" id="rota_volta">Voltar</i></a>
+        </nav>
+    </div>
+</header>
+
+
+<form action="atletas/salvar" method="post">
+    <fieldset class="col2">
+        <div class="foto">
+            <img src="/Fotos/{{atleta.foto}}" alt="Sem-foto">
+        </div>
+        <div>
+            <div>
+                <label for="codigo">Código</label>
+                <input type="text" id="codigo" name="codigo" disabled value="{{atleta.codigo}}">
+            </div>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" value="{{atleta.nome}}">
+            </div>
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo" value="{{atleta.sexo}}">
+                    <option value="M">MASCULINO</option>
+                    <option value="F">FEMININO</option>
+                </select>
+            </div>
+            <div>
+                <label for="dtcadastro">Data Cadastro:</label>
+                <input type="date" name="dtcadastro" id="dtcadastro" value="{{atleta.dtcadastro}}">
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" value="{{atleta.cpf}}">
+            </div>
+            <div>
+                <label for="datanasc">Data Nasc:</label>
+                <input type="date" name="datanasc" id="datanasc" value="{{atleta.datanasc}}">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="col1">
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" value="{{atleta.cep}}">
+        </div>
+        <div>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" value="{{atleta.endereco}}">
+        </div>
+        <div>
+            <label for="numero">Nro:</label>
+            <input type="text" id="numero" name="numero" value="{{atleta.numero}}">
+        </div>
+        <div>
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento" value="{{atleta.complemento}}">
+        </div>
+        <div>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" value="{{atleta.bairro}}">
+        </div>
+        <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" value="{{atleta.cidade}}">
+        </div>
+        <div>
+            <label for="uf">UF:</label>
+            <input type="text" id="estado" name="estado" value="{{atleta.estado}}">
+        </div>
+        <div>
+            <label for="fone">Fone:</label>
+            <input type="text" id="fone" name="fone" value="{{atleta.fone}}">
+        </div>
+        <div>
+            <label for="Celular">Celular:</label>
+            <input type="text" id="celular" name="celular" value="{{atleta.celular}}">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" value="{{atleta.email}}">
+        </div>
+    </fieldset>
+
+    <fieldset class="col1">
+        <div>
+            <label for="tiporegistro">Tipo registro:</label>
+            <select name="tiporegistro" id="tiporegistro" value="{{atleta.tiporegistro}}">
+                <option value="0">Inativo</option>
+                <option value="1">Isento</option>
+                <option value="2">Regional</option>
+                <option value="3">Vinculado</option>
+                <option value="4">Filiado</option>
+            </select>
+        </div>
+        <div>
+            <label for="id_academia">Academia:</label>
+            <input type="text" id="id_academia" name="id_academia" value="{{atleta.id_academia}}">
+            <span class="razao">{{atleta.academia.razao}}</span>
+            <i class="fas fa-search buscarAcademia"></i>
+        </div>
+        <div>
+            <label for="id_faixa">Graduação:</label>
+            <select name="id_faixa" id="id_faixa" value="{{atleta.id_faixa}}">
+                <option value="0">Selecione...</option>
+                {{#each faixas }}
+                <option value={{id}}>{{nome}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div>
+            <label for="dataultpromo">Última promoção:</label>
+            <input type="date" name="dataultpromo" id="dataultpromo" value='{{atleta.dataultpromo}}'>
+        </div>
+        <div class="nome_carteirinha">
+            <label for="nome_cart">Nome Carteirinha:</label>
+            <input type="text" name="nome_cart" id="nome_cart" placeholder="Nome na carteirinha..."
+                value="{{atleta.nome_cart}}"><br>
+            <p>Abreviar o nome para imprimir corretamente na carteirinha.</p>
+        </div>
+    </fieldset>
+
+    <div class="salvar">
+        <input type="submit" value="Salvar" id="btnSalvar">
+    </div>
+</form>

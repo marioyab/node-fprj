@@ -1,0 +1,25 @@
+
+footer {
+    border: none;
+    background-color: rgba(11,11,14,.9);
+    padding: .8rem;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+@media (max-width: 960px) {
+    html {
+        font-size: 50%;
+    }
+    header {
+        height: auto;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    
+}

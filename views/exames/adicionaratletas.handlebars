@@ -1,0 +1,55 @@
+{{#each erros}}
+    <div class="erros">{{texto}}</div>
+{{/each}}
+<header>
+    {{#each evento}}
+    <a href="/exames/ata/{{codevento}}"><i class="fas fa-arrow-left fa-lg"></i></a>
+    <div class="evento">
+        {{!-- {{#each calendario}} --}}
+        <h3>{{descricao}}</h3>
+        <h4 style="text-align: center;">{{local}} - {{#formatDate dataevento}}{{/formatDate}}</h4>     
+       
+    </div>
+    
+     {{/each}}
+</header>
+
+<div class="conteudo-add">
+    <form action="/exames/ata/inserirAtleta" method="POST" id="formulario" >
+        {{#each evento}}
+        <input name="codevento" id="codevento" value="{{codevento}}" hidden>
+        {{/each}}
+        <div class="add-atletas">
+            <label for="codigo">Atleta:</label>
+            <input type="text" name="codcand" id="codcand" required>
+            <input type="text" name="nome" id="nome" placeholder="nome" disabled>
+            <input type="text" name="id_faixa" id="id_faixa" hidden>
+        </div>
+        <div class="atividades">
+            <label for="tipoativ">Atividade:</label>
+            <select name="tipoativ" id="tipoativ" name="tipoativ" required>
+                <option >Selecione...</option>
+                <option value="1">Competição</option>
+                <option value="2">Cursos/Cargos</option>
+                <option value="3">Arbitragem</option>
+            </select>
+            <select name="codativ" id="codativ" name="codativ" required>
+                <option value="">...</option>
+                {{#each atividades}}
+                <option value="{{codativ}}">{{descricao}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="pontos">
+            <label for="pto">Pontos:</label>
+            <input type="text" name="pto" id="pto" name="pto" required>
+            <input type="text" name="percentual" id="percentual" value="100">
+            <label for="percentual">%</label>
+        </div>
+        <div class="obs">
+            <label for="obs" style="vertical-align: top;">Observação:</label>
+            <textarea name="obs" id="obs" rows="5" cols="45"></textarea>
+        </div>
+        <input type="submit" id="btnSalvar" value="Salvar">
+    </form>
+</div>

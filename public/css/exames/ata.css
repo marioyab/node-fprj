@@ -1,0 +1,129 @@
+header {
+    width: 100%;
+    background: #006064;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 2rem; 
+}
+
+.evento {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.opcoes {
+    padding: 0 50px;
+}
+
+.opcoes .fa-search {
+    transform: translate(20px, -2px);
+}
+.opcoes input {
+    padding-left: 20px;
+}
+
+.opcoes i {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* .opcoes i:hover {
+    color: #1DC4FE;
+    transition: .3s all ease;
+} */
+
+header  a {
+    font-size: 2rem;
+    color: white;
+    /* transform: translate(-10px, 5px);*/
+}
+
+
+.opcoes input {
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+#btnLimpar {
+    transform: translateX(-20px);
+}
+
+.lista-ata {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 1px solid silver;
+    border-radius: 7px;
+    padding: 1rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    padding: 1rem;
+}
+
+tr {
+    border-bottom: 1px solid silver;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #1DC4Fe;
+}
+
+tr button:hover {
+    background-color: #1DC4Fe;
+} 
+
+.ata-item {
+    height: 30px;
+}
+.codigo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+}
+.codigo::after {
+    content: "";
+    margin-right: 1.3rem;
+}
+.nome {
+    font-size: 1.3rem;
+}
+
+.atividade {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    /*color: gray;*/
+}
+
+.pto {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    text-align: center;
+}
+
+.del i {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+.fa-trash {
+    color: crimson;
+}
+
+.fa-edit {
+    color: #0d8eb9;
+}
+.del button {
+    width: 5rem;
+    border: none;
+    text-align: center;
+}

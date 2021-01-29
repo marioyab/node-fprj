@@ -1,0 +1,52 @@
+<header>
+    <a href="/exames"><i class="fas fa-arrow-left"></i></a>
+    <div class="evento">
+        {{#each calendario}}
+        <h3>{{descricao}}</h3>
+        <h4 style="text-align: center;">{{local}} - {{#formatDate dataevento}}{{/formatDate}}</h4>     
+       
+    </div>
+    <div class="opcoes">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Código/Nome..." id="search">
+        <i class="fas fa-times" id="btnLimpar"></i>
+    </div>
+    <a href="/exames/ata/getAdicionarAtletas/{{codevento}}"><i class="fas fa-user-plus fa-lg"></i></a>
+     {{/each}}
+</header>
+
+<div class="lista-ata">
+    <table class="tabela-ata">
+        <thead>
+            <tr class="cab">
+                <th>CÓD.</th>
+                <th style="text-align: left;">NOME</th>
+                <th>ATIVIDADE</th>
+                <th>PONTOS</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each ata}}
+            <tr class="ata-item">
+                <td class="codigo">{{atleta.codigo}}</td>
+                <td class="nome">{{atleta.nome}}</td>
+                <td class="atividade">{{tabativ.descricao}}</td>
+                <td class="pto">{{pto}}</td>
+                <td class="del">
+                    <form action="/exames/delete" method="POST">
+                        <input type="hidden" name="id" value="{{id}}">
+                        <input type="hidden" name="codevento" value="{{codevento}}">
+                        <a href="/exames/ata/editar/{{codevento}}/{{codcand}}/{{codativ}}"><i class="fa fa-edit"></i></a>
+                        <i class="fa fa-trash"></i>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        {{!-- /delete/ata/:codevento/reg/:id --}}
+    </table>
+    <script>
+
+    </script>
+</div>

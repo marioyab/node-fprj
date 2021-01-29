@@ -1,0 +1,60 @@
+main {
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: calc(100vh - 11rem); */
+    background: url('/img/fundo.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+}
+.header {
+    width: 100%;
+    background-color: rgba(11,11,14,.9);
+    color: #ccc;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.header img {
+    display: block;
+    margin-right: 1rem;
+    float: left;
+    width: 5rem;
+    height: 4.5rem;
+    max-width: 100%;
+}
+
+.header h1 {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header a {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    color: #ccc;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 1.5rem;
+    transition: all .3s ease;
+}
+
+.header-empresa {
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header a:hover {
+    color: #1DC4FE;
+    cursor: pointer;
+}
