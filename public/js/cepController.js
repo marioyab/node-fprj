@@ -27,7 +27,6 @@ export class cepController {
     }
 
     setResultado(endereco) {
-        console.log(endereco)
         this.endereco.value = endereco.logradouro.toUpperCase()
         // this.complemento.value = endereco.complemento.toUpperCase()
         this.bairro.value = endereco.bairro.toUpperCase()

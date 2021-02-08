@@ -1,16 +1,20 @@
 <header class="header">
     <h2>Atletas</h2>
-    <a href="/"><i class="fas fa-home"></i></a>
+    <div class="busca">
+        <i class="fa fa-search"></i>
+        <input type="text" class="search-txt" id="txt-busca" spellcheck="false" placeholder="Código/Nome...">
+        <i class="fa fa-times"></i>
+    </div>
+    <div>
+        <label for="buscarAtivos">Ativos</label>
+        <input type="checkbox" id="buscarAtivos" value="true">
+    </div>
+    <div class="menu">
+        <a href="atletas/cadastro/novo"><i class="fas fa-user-plus"></i>Cadastrar</a>
+        <a href="#"><i class="fas fa-sort-amount-up-alt"></i>Rankiamento</a>
+        <a href="/"><i class="fas fa-home"></i>Início</a>
+    </div>
 </header>
 
-<main>
-    <div class="wrapper">
-        <div class="search-input">
-            <input type="text" class="search-txt" spellcheck="false" placeholder="Código/Nome...">
-            <div class="autocom-box">
-                
-            </div>
-            <div class="icon"><i class="fa fa-search"></i></div>
-        </div>
-    </div>
-</main>
+<div class="resultado">
+</div>

@@ -26,8 +26,13 @@ exports.getBusca = async (req, res) => {
     
 }
 
-exports.getCadastro = (req, res) => {
-    res.render('atletas/cadastro')
+exports.getCadastro = async (req, res) => {
+    const faixas = await repositoryFaixas.getFaixas()
+    const css = ['atletas/cadastro.css']
+    const js = [ {
+        type: 'module', name: 'atletas/cadastro.js'
+    }]
+    res.render('atletas/cadastro', { css: css, js: js, faixas: faixas })
 }
 
 exports.getByCodigo = async (req, res) => {

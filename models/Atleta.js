@@ -49,6 +49,30 @@ const Atleta = sequelize.define('atletas', {
     tiporegistro: {
         type: Sequelize.STRING
     },
+    tipoDesc: {
+        type: Sequelize.VIRTUAL,
+        get() {
+            const rawValue = `${this.tiporegistro
+    }`
+            const sexo = `${this.getDataValue('sexo')}`
+            switch (rawValue) {
+                case '0':
+                    return sexo == 'M' ?'INATIVO':'INATIVA'
+                    break
+                case '1':
+                    return sexo == 'M' ? 'ISENTO':'ISENTA'
+                    break
+                case '2':
+                    return sexo == 'M' ? 'REGIONAL' :'REGIONAL'
+                    break
+                case '3':
+                    return sexo == 'M' ? 'FILIADO' : 'FILIADA'
+                    break
+                default:
+                    return 'NÃO DEFINIDO'
+            }
+        }
+    },
     email: {
         type: Sequelize.STRING
     },

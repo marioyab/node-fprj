@@ -1,48 +1,60 @@
-const searchWrapper = document.querySelector('.search-input')
-const inputBox = document.querySelector('.search-txt')
-const suggBox = document.querySelector('.autocom-box')
+const resultado = document.querySelector('.resultado')
+const inputBox = document.querySelector('#txt-busca')
 
 function ListaTemplate({codigo, nome, foto}) {
-    return `
-       <li>
-        <a href="atletas/editar/${codigo}">  
-        <img class="foto" src="/Fotos/${foto}" alt="${foto}"/>
-        <p class="codigo">${codigo} <span>${nome}</span></p></a>
-      </li>
-    `
-
+   resultado.innerHTML = `
+    <li><img src="${foto}">
+      ${codigo} ${nome}}</li>
+   `
 }
 
 const limparPesquisa = () => {
-    inputBox.value = ''
-    searchWrapper.classList.remove('active') 
+    inputBox.value = ''         
+    resultado.classList.remove('active') 
 }
+
+const buscarPorNome = (nome) => new URL("atletas/buscar/" + nome, window.location.origin)
+const buscarPorCodigo = (codigo) => new URL("atletas/codigo/" + codigo, window.location.origin)
+
+
 inputBox.onkeyup = async (event) => {
-    let nome = event.target.value
-    if(!nome) {
+    let parametro = event.target.value
+    if(!parametro) {
         limparPesquisa()
         return
     }
-    if(nome.length > 3) {
-        let url
-        if (isNaN(nome)) {
-            url = new URL("atletas/buscar/" + nome, window.location.origin)        
-        } else {
-            url = new URL("atletas/codigo/" + nome, window.location.origin)
-        }
-        const response = await fetch(url, { method: 'GET', Cors: 'no-cors' })
+    if(parametro.length > 3) {
+        let url = (isNaN(parametro)) 
+            ? buscarPorNome(parametro)
+            : buscarPorCodigo(parametro)
+
+        const response = await fetch(url)
         const atletas = await response.json()
+        
+        newFunction()           
+        
         if (atletas.length > 1) {
-            // resultado.classList.remove('escondido')
-            suggBox.innerHTML = `     
-                ${atletas.map(ListaTemplate).join('')}
-            `
-            searchWrapper.classList.add('active')
+            resultado.innerHTML = `
+                <ul>
+                    ${atletas.map(atleta => {
+                        return ` 
+                        <li>
+                            <div>
+                                <span>${atleta.codigo}</span> - ${atleta.nome}<br>
+                                ${atleta.faixa.nome}<br>
+                                ${atleta.tipoDesc}</br>
+                                <p class="academia">${atleta.academia.razao}</p>
+                            </div>
+                            <img src="/Fotos/${atleta.foto}" width="70" height="100">
+                        </li>
+                        `
+                    }).join('')}
+                </ul>`
         } else if (atletas.length == 0) {
             limparPesquisa()
             alert('Nenhum resultado encontrado.')
         } else {
-            window.location.href(`"atletas/editar/${nome}"`)
+            window.location.href(`"atletas/editar/${parametro}"`)
         } 
     }
 }
@@ -50,5 +62,10 @@ inputBox.onkeyup = async (event) => {
 document.addEventListener("DOMContentLoaded", event => {
     event.preventDefault()
     limparPesquisa()
+    inputBox.focus()
 })
+
+function newFunction() {
+    resultado.classList.add('active')
+}
 

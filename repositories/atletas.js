@@ -8,13 +8,17 @@ exports.getBusca = async (nome) => {
     try {
         const atletas = await Atleta.findAll({
             where: {
-                nome: {
-                    [Op.substring]: str
-                }
+                [Op.and]: [
+                    { nome: { [Op.substring]: str }},
+                    { tiporegistro: {[ Op.gt]: 0 }}
+                ]
             },
             include: [{
                 model: Academia,
                 attributes: ['codigo','razao']
+            },{
+                model: Faixa,
+                attributes: ['id', 'nome']
             }],
             order: ['nome']
         })

@@ -16,7 +16,7 @@
     const carteirinhas = require('./routes/routeCarteirinha')
     const app = express()
     
-    require('dotenv')
+    // require('dotenv')
 // Configurações
      // Sessão
      app.use(session({
